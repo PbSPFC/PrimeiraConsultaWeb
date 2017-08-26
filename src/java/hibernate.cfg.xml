@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost/medicina</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">pb</property>
+
+		<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>		
+		<property name="show_sql">true</property>
+		<property name="format_sql">true</property>
+		
+		<mapping class="br.uninove.primeiraconsulta.entidade.Usuario"/>
+		<mapping class="br.uninove.primeiraconsulta.entidade.Status"/>
+                
+                <mapping class="br.uninove.primeiraconsulta.entidade.Anamnese"/>
+                <mapping class="br.uninove.primeiraconsulta.entidade.EstiloDeVida"/>
+                <mapping class="br.uninove.primeiraconsulta.entidade.ExameFisico"/>
+                <mapping class="br.uninove.primeiraconsulta.entidade.ListaProblemas"/>
+                <mapping class="br.uninove.primeiraconsulta.entidade.Prontuario"/>
+                
+                <mapping class="br.uninove.primeiraconsulta.entidade.log.LogAnamnese"/>
+                <mapping class="br.uninove.primeiraconsulta.entidade.log.LogEstiloDeVida"/>
+                <mapping class="br.uninove.primeiraconsulta.entidade.log.LogExameFisico"/>
+                <mapping class="br.uninove.primeiraconsulta.entidade.log.LogListaProblemas"/>
+                <mapping class="br.uninove.primeiraconsulta.entidade.log.LogProntuario"/>
+                
+	</session-factory>
+</hibernate-configuration>

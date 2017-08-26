@@ -1,0 +1,49 @@
+<ui:composition template="/WEB-INF/template/LayoutPadrao.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:define name="titulo">Cadastro de Aluno</ui:define>
+
+    <ui:define name="conteudo">
+
+        <div align="center">
+        
+        <h1 class="texto-pc">Cadastro de Aluno</h1>
+
+        <h:form id="frm">
+
+            <h:messages showDetail="false" showSummary="true" 
+                        styleClass="form-messages" errorClass="error"
+                        infoClass="info" />
+
+            <h:panelGrid columns="2" styleClass="border-branco"
+                         columnClasses="label, campo" id="panel">
+
+                <h:outputLabel value="Nome: "/>
+                <h:inputText size="60" value="#{cadastroAlunoView.usuario.nome}" 
+                             required="true" label="Nome" />
+
+                <h:outputLabel value="RA: "/>
+                <h:inputText size="10" value="#{cadastroAlunoView.usuario.ra}" 
+                             required="true" label="RA" converter="javax.faces.Integer"/>
+
+                <h:outputLabel value="Senha: "/>
+                <h:inputSecret size="32" value="#{cadastroAlunoView.usuario.senha}" 
+                               required="true" label="Nome" />
+
+                <h:outputLabel value="E-mail: "/>
+                <h:inputText size="60" value="#{cadastroAlunoView.usuario.email}" 
+                             required="true" label="Nome" />
+
+
+            </h:panelGrid>
+            <h:commandButton value="Cadastrar" action="#{cadastroAlunoView.salvar}" styleClass="button" />
+        </h:form>
+        
+        </div>
+        
+    </ui:define>
+
+</ui:composition>

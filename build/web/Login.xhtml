@@ -1,0 +1,42 @@
+<ui:composition template="/WEB-INF/template/LayoutPadrao.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:define name="titulo">Primeira Consulta - Login</ui:define>
+
+    <ui:define name="conteudo">
+        <div align="center" style="margin-top: 100px; margin-bottom: 100px;">
+
+            <h1 class="texto-pc">Primeira Consulta</h1>
+            <h:graphicImage value="/imagens/logo.png"/>
+
+
+
+            <h:form id="frm">
+                <div style="width: 240px; margin-left: auto; margin-right: auto; margin-top: 25px">
+                    <h:messages showDetail="false" showSummary="true" 
+                                styleClass="form-messages" errorClass="error"/>
+
+                    <h:panelGrid columns="2" styleClass="border-branco" style="padding: 10px"
+                                 columnClasses="label, campo" id="panel">
+
+                        <h:outputLabel value="CRM/RA"/>
+                        <h:inputText value="#{segurancaBean.usuario}" size="20"/>
+
+                        <h:outputLabel value="#{msg.password}"/>
+                        <h:inputSecret value="#{segurancaBean.senha}" size="20"/>
+
+                        <h:panelGroup/>
+
+                    </h:panelGrid>
+                </div>
+                <h:commandButton value="Conectar-se" action="#{segurancaBean.logar}" styleClass="button-login">
+                </h:commandButton>
+            </h:form>
+
+        </div>
+    </ui:define>
+
+</ui:composition>

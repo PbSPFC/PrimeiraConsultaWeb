@@ -1,0 +1,134 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core">
+
+    <h1 class="texto-pc">Estilo de Vida / Hábitos</h1>
+    <h1 class="texto-pc">Dieta</h1>
+
+    <h:panelGrid columns="1" styleClass="border-branco"
+                 rowClasses="label2, campo, campo">
+
+        <h:outputLabel value="Gordura / Colesterol: "/>
+        <h:outputLabel value="#{not empty verProntuarioView.estiloDeVida.gordura 
+                                ? verProntuarioView.estiloDeVida.gordura : 'N/D'}" />
+        <h:panelGroup><br /></h:panelGroup>
+
+        <h:outputLabel value="Fibra: "/>
+        <h:outputLabel value="#{not empty verProntuarioView.estiloDeVida.fibra 
+                                ? verProntuarioView.estiloDeVida.fibra : 'N/D'}" />
+        <h:panelGroup><br /></h:panelGroup>
+
+        <h:outputLabel value="Cálcio: "/>
+        <h:outputLabel value="#{not empty verProntuarioView.estiloDeVida.calcio 
+                                ? verProntuarioView.estiloDeVida.calcio : 'N/D'}" />
+        <h:panelGroup><br /></h:panelGroup>
+
+        <h:outputLabel value="Sódio: "/>
+        <h:outputLabel value="#{not empty verProntuarioView.estiloDeVida.sodio 
+                                ? verProntuarioView.estiloDeVida.sodio : 'N/D'}" />
+        <h:panelGroup><br /></h:panelGroup>
+
+        <h:outputLabel value="Acúcares / Doces: "/>
+        <h:outputLabel value="#{not empty verProntuarioView.estiloDeVida.acucar 
+                                ? verProntuarioView.estiloDeVida.acucar : 'N/D'}" />
+        <h:panelGroup><br /></h:panelGroup>
+
+        <h:outputLabel value="Refrigerantes / Sucos Artificiais: "/>
+        <h:outputLabel value="#{not empty verProntuarioView.estiloDeVida.refri 
+                                ? verProntuarioView.estiloDeVida.refri : 'N/D'}" />
+        <h:panelGroup><br /></h:panelGroup>
+
+        <h:outputLabel value="Ingestão de Água:"/>
+        <h:outputLabel value="#{not empty verProntuarioView.estiloDeVida.agua 
+                                ? verProntuarioView.estiloDeVida.agua : 'N/D'}" />
+        <h:panelGroup><br /></h:panelGroup>
+
+        <h:outputLabel value="Atividade Física: "/>
+        <h:outputLabel value="#{not empty verProntuarioView.estiloDeVida.atFisica 
+                                ? verProntuarioView.estiloDeVida.atFisica : 'N/D'}" />
+        <h:panelGroup><br /></h:panelGroup>
+
+        <h:outputLabel value="Paciente é Sexualmente Ativo?"/>
+        <h:outputLabel value="#{not empty verProntuarioView.estiloDeVida.sexualmenteAtivo 
+                                ? verProntuarioView.estiloDeVida.sexualmenteAtivo : 'N/D'}" />
+        <h:panelGroup><br /></h:panelGroup>
+
+        <h2 style="text-align: center; font-size: 32px;">Sono, avaliação do ronco: </h2>
+        <h:panelGroup><br /></h:panelGroup>
+        <h:panelGroup />
+
+        <h:outputLabel value="Resultado: "/>
+        <h:outputLabel value="#{not empty verProntuarioView.estiloDeVida.sono 
+                                ? verProntuarioView.estiloDeVida.sono : 'N/D'}" />
+        <h:panelGroup><br /></h:panelGroup>
+
+        <h:outputLabel value="Pontos no Epworth: "/>
+        <h:outputLabel value="#{verProntuarioView.estiloDeVida.sonoPontos}" />
+        <h:panelGroup><br /></h:panelGroup>
+
+        <h2 style="text-align: center; font-size: 32px;">Tabagismo (Fagerstrom): </h2>
+        <h:panelGroup><br /></h:panelGroup>
+        <h:panelGroup />
+
+        <h:outputLabel value="1 - Quanto tempo após acordar você fuma seu primeiro cigarro?"/>
+        <h:outputLabel value="#{verProntuarioView.estiloDeVida.cigarro1}" />
+        <h:panelGroup><br /></h:panelGroup>
+
+        <h:outputLabel value="2 - Você acha difícil não fumar em lugares proíbidos, como igrejas, ônibus, etc?"/>
+        <h:outputLabel value="#{verProntuarioView.estiloDeVida.cigarro2}" />
+        <h:panelGroup><br /></h:panelGroup>
+
+        <h:outputLabel value="3 - Qual cigarro do dia traz mais satisfação?"/>
+        <h:outputLabel value="#{verProntuarioView.estiloDeVida.cigarro3}" />
+        <h:panelGroup><br /></h:panelGroup>
+
+        <h:outputLabel value="4 - Quantos cigarros você fuma por dia?"/>
+        <h:outputLabel value="#{verProntuarioView.estiloDeVida.cigarro4}" />
+        <h:panelGroup><br /></h:panelGroup>
+
+        <h:outputLabel value="5 - Você fuma frequentemente pela manhã?"/>
+        <h:outputLabel value="#{verProntuarioView.estiloDeVida.cigarro5}" />
+        <h:panelGroup><br /></h:panelGroup>
+
+        <h:outputLabel value="6 - Você fuma mesmo doente?"/>
+        <h:outputLabel value="#{verProntuarioView.estiloDeVida.cigarro6}" />
+        <h:panelGroup><br /></h:panelGroup>
+
+        <h:outputLabel value="Resultado: "/>
+        <h:outputLabel value="#{not empty verProntuarioView.estiloDeVida.cigarro 
+                                ? verProntuarioView.estiloDeVida.cigarro : 'N/D'}" />
+        <h:panelGroup><br /></h:panelGroup>
+
+        <h:outputLabel value="Pontos no Fagestrom: "/>
+        <h:outputLabel value="#{verProntuarioView.estiloDeVida.cigarroPontos}" />
+        <h:panelGroup><br /></h:panelGroup>
+
+        <h2 style="text-align: center; font-size: 32px;">Consumo de Álcool</h2>
+        <h:panelGroup><br /></h:panelGroup>
+        <h:panelGroup />
+        
+        <h:outputLabel value="Alguma vez você sentiu que deveria diminuir a quantidade de bebida, ou parar de beber?" />
+        <h:outputLabel value="#{verProntuarioView.estiloDeVida.alcool1}" />
+        <h:panelGroup><br /></h:panelGroup>
+        
+        <h:outputLabel value="As pessoas a/o aborrecem porque criticam o seu modo de beber?" />
+        <h:outputLabel value="#{verProntuarioView.estiloDeVida.alcool2}" />
+        <h:panelGroup><br /></h:panelGroup>
+        
+        <h:outputLabel value="Você se sente culpado ou chateado pela maneira que costuma beber?" />
+        <h:outputLabel value="#{verProntuarioView.estiloDeVida.alcool3}" />
+        <h:panelGroup><br /></h:panelGroup>
+        
+        <h:outputLabel value="Alguma vez você já, como primeira ação pela manhã, bebeu para acalmar os nervos ou para se livrar de uma ressaca?" />
+        <h:outputLabel value="#{verProntuarioView.estiloDeVida.alcool4}" />
+        <h:panelGroup><br /></h:panelGroup>
+        
+        <h:outputLabel value="Resultado: "/>
+        <h:outputLabel value="#{not empty verProntuarioView.estiloDeVida.alcool 
+                                ? verProntuarioView.estiloDeVida.alcool : 'N/D'}" />
+        <h:panelGroup><br /></h:panelGroup>
+        
+    </h:panelGrid>
+
+</ui:composition>

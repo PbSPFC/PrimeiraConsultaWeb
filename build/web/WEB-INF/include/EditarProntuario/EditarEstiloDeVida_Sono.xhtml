@@ -1,0 +1,136 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core">
+
+        <h2 style="text-align: center; font-size: 32px;">Sono, avaliação do ronco: </h2>
+        <h:panelGroup><br /></h:panelGroup>
+        <h:panelGroup />
+
+        <h:outputLabel>Qual a probabilidade de você cochilar ou dormir, e não apenas se sentir cansado, nas seguintes situações?
+            <br /><br />Considere o modo de vida que você tem levado recentemente. Mesmo que você não tenha feito algumas destas coisas recentemente, tente imaginar como elas o afetariam. Escolha o número mais apropriado para responder cada questão.
+        </h:outputLabel>
+        <h:outputLabel>
+            <br />
+            0 = Nunca cochilaria.<br />
+            1 = Pequena probabilidade de cochilar. <br />
+            2 = Probabilidade média de cochilar. <br />
+            3 = Grande probabilidade de cochilar. <br />
+        </h:outputLabel>
+        <h:panelGroup><br /></h:panelGroup>
+
+        <h:outputLabel value="Sentado e lendo: " />
+        <h:selectOneRadio value="#{editarProntuarioView.estiloDeVida.sonoOpt1}"
+                          label="Sentado e lendo" >
+
+            <f:selectItem itemLabel="0" 
+                          itemValue="0" />
+            
+            <f:selectItem itemLabel="1" 
+                          itemValue="1" />
+
+            <f:selectItem itemLabel="2" 
+                          itemValue="2" />
+
+            <f:selectItem itemLabel="3" 
+                          itemValue="3" />
+
+        </h:selectOneRadio>
+        <h:panelGroup><br /></h:panelGroup>
+
+        <h:outputLabel value="Assistindo TV: " />
+        <h:selectOneRadio value="#{editarProntuarioView.estiloDeVida.sonoOpt2}"
+                          label="Assistindo TV">
+            
+            <f:selectItem itemLabel="0" 
+                          itemValue="0" />
+
+            <f:selectItem itemLabel="1" 
+                          itemValue="1" />
+
+            <f:selectItem itemLabel="2" 
+                          itemValue="2" />
+
+            <f:selectItem itemLabel="3" 
+                          itemValue="3" />
+            
+        </h:selectOneRadio>
+        <h:panelGroup><br /></h:panelGroup>
+
+        <h:outputLabel value="Sentado, quieto, em um lugar público (Ex: Teatro, Reunião, Palestra, etc): " />
+        <h:selectOneRadio value="#{editarProntuarioView.estiloDeVida.sonoOpt3}"
+                          label="Sentado, quieto, em um lugar público">
+            
+            <f:selectItem itemLabel="0" 
+                          itemValue="0" />
+
+            <f:selectItem itemLabel="1" 
+                          itemValue="1" />
+
+            <f:selectItem itemLabel="2" 
+                          itemValue="2" />
+
+            <f:selectItem itemLabel="3" 
+                          itemValue="3" />
+            
+        </h:selectOneRadio>
+        <h:panelGroup><br /></h:panelGroup>
+
+        <h:outputLabel value="Andando de carro por uma hora sem parar, como passageiro: " />
+        <h:selectOneRadio value="#{editarProntuarioView.estiloDeVida.sonoOpt4}"
+                          label="Andando de carro por uma hora sem parar">
+            
+            <f:selectItem itemLabel="0" 
+                          itemValue="0" />
+
+            <f:selectItem itemLabel="1" 
+                          itemValue="1" />
+
+            <f:selectItem itemLabel="2" 
+                          itemValue="2" />
+
+            <f:selectItem itemLabel="3" 
+                          itemValue="3" />
+            
+        </h:selectOneRadio>
+        <h:panelGroup><br /></h:panelGroup>
+
+        <h:outputLabel value="Sentado quieto após o almoço sem bebida alcólica: " />
+        <h:selectOneRadio value="#{editarProntuarioView.estiloDeVida.sonoOpt5}"
+                          label="Sentado quieto após o almoço sem bebida alcólica">
+            
+            <f:selectItem itemLabel="0" 
+                          itemValue="0" />
+
+            <f:selectItem itemLabel="1" 
+                          itemValue="1" />
+
+            <f:selectItem itemLabel="2" 
+                          itemValue="2" />
+
+            <f:selectItem itemLabel="3" 
+                          itemValue="3" />
+            
+        </h:selectOneRadio>
+        <h:panelGroup><br /></h:panelGroup>
+
+        <h:outputLabel value="Em um carro parado no trânsito por alguns minutos: " />
+        <h:selectOneRadio value="#{editarProntuarioView.estiloDeVida.sonoOpt6}"
+                          label="Em um carro parado no trânsito por alguns minutos">
+            
+            <f:selectItem itemLabel="0" 
+                          itemValue="0" />
+
+            <f:selectItem itemLabel="1" 
+                          itemValue="1" />
+
+            <f:selectItem itemLabel="2" 
+                          itemValue="2" />
+
+            <f:selectItem itemLabel="3" 
+                          itemValue="3" />
+            
+        </h:selectOneRadio>
+        <h:panelGroup><br /></h:panelGroup>
+
+</ui:composition>

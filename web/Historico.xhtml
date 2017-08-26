@@ -1,0 +1,61 @@
+<ui:composition template="/WEB-INF/template/LayoutPadrao.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:define name="titulo">Histórico</ui:define>
+
+    <ui:define name="conteudo">
+        <h:outputStylesheet library="css" name="sistema.css"/>
+
+        <h1 class="texto-pc">Histórico</h1>
+        <h2 class="texto-pc">Número do Prontuário: #{historicoView.prontuario.numProntuario}</h2>
+
+        <div align="center">
+            <h:form id="frm">
+
+                <h:messages showDetail="false" showSummary="true" 
+                            styleClass="form-messages" errorClass="error"
+                            infoClass="info" />
+
+                <div class="border-branco-lista" align="center">
+
+                    <ui:repeat var="logProntuario" value="#{historicoView.listaProntuario}">
+
+                        <div align="center" class="border3">
+
+                            <h:outputLabel value="Data: " style="font-size: 24px; font-weight: bold;" styleClass="label"/>
+                            <h:outputText value="#{prontuario.dataEdicao}" style="font-size: 24px;" styleClass="label"/>
+                            <br /><br /><br />
+
+                            <div class="tooltip">
+                                <h:commandLink action="#{historicoView.verProntuario()}" value="Ver" styleClass="button-ver-prontuario">
+                                    <f:setPropertyActionListener target="#{historicoView.prontuarioSelecionado}" 
+                                                                 value="#{logProntuario}"/>
+                                </h:commandLink>
+                                <span class="tooltiptext">Ultima edição: #{prontuario.dataEdicao}</span>
+                            </div>
+
+                            <div class="tooltip">
+                                <h:commandLink onclick="if (!confirm('Deseja excluir este log?'))
+                                        return false" action="#{historicoView.excluir()}" value="Excluir" styleClass="button-excluir">
+                                    <f:setPropertyActionListener target="#{historicoView.prontuarioSelecionado}" 
+                                                                 value="#{logProntuario}"/>
+                                </h:commandLink>
+                                <span class="tooltiptext">Deseja excluír o log do dia #{prontuario.dataEdicao}?</span>
+                            </div>
+
+                            <br /><br /><br />
+
+                        </div>
+
+
+                    </ui:repeat>
+                </div>
+
+            </h:form>
+        </div>
+    </ui:define>
+
+</ui:composition>

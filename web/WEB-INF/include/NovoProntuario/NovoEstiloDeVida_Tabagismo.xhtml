@@ -1,0 +1,122 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core">
+
+    <h2 style="text-align: center; font-size: 32px;">Tabagismo (Fagerstrom): </h2>
+    <h:panelGroup><br /></h:panelGroup>
+    <h:panelGroup />
+
+    <h:outputLabel value="Tabagismo ativo: " />
+    <h:selectOneRadio value="#{novoProntuarioView.estiloDeVida.cigarroAtivoOpt}"
+                      label="Tabagismo ativo" >
+
+        <f:selectItem itemLabel="Sim" 
+                      itemValue="1" />
+
+        <f:selectItem itemLabel="Não" 
+                      itemValue="0" />
+
+    </h:selectOneRadio>
+    <h:panelGroup><br /></h:panelGroup>
+
+    <h2 style="text-align: center; font-size: 32px;">Avaliação do grau de dependência (Caso seja ativo): </h2>
+    <h:panelGroup><br /></h:panelGroup>
+    <h:panelGroup />
+
+    <h:outputLabel value="1 - Quanto tempo após acordar você fuma seu primeiro cigarro?" />
+    <h:selectOneRadio value="#{novoProntuarioView.estiloDeVida.cigarro1}"
+                      label="Quanto tempo após acordar você fuma seu primeiro cigarro?">
+
+        <f:selectItem itemLabel="Dentro de 5 minutos." 
+                      itemValue="Dentro de 5 minutos. (3 pontos)" />
+
+        <f:selectItem itemLabel="Entre 6-30 minutos." 
+                      itemValue="Entre 6-30 minutos. (2 pontos)" />
+
+        <f:selectItem itemLabel="Entre 31-60 minutos." 
+                      itemValue="Entre 31-60 minutos. (1 ponto)" />
+
+        <f:selectItem itemLabel="Após 60 minutos." 
+                      itemValue="Após 60 minutos. (0 ponto)" />
+
+    </h:selectOneRadio>
+    <h:panelGroup><br /></h:panelGroup>
+
+    <h:outputLabel value="2 - Você acha difícil não fumar em lugares proíbidos, como igrejas, ônibus, etc?" />
+    <h:selectOneRadio value="#{novoProntuarioView.estiloDeVida.cigarro2}"
+                      label="Você acha difícil não fumar em lugares proíbidos, como igrejas, ônibus, etc?">
+
+        <f:selectItem itemLabel="Sim." 
+                      itemValue="Sim. (1 pontos)" />
+
+        <f:selectItem itemLabel="Não" 
+                      itemValue="Não. (0 pontos)" />
+
+    </h:selectOneRadio>
+    <h:panelGroup><br /></h:panelGroup>
+
+    <h:outputLabel value="3 - Qual cigarro do dia traz mais satisfação?" />
+    <h:selectOneRadio value="#{novoProntuarioView.estiloDeVida.cigarro3}"
+                      label="Qual cigarro do dia traz mais satisfação?">
+
+        <f:selectItem itemLabel="O primeira do dia." 
+                      itemValue="O primeira do dia. (1 pontos)" />
+
+        <f:selectItem itemLabel="Outros." 
+                      itemValue="Outros. (0 pontos)" />
+
+        <f:selectItem itemLabel="Nenhum." 
+                      itemValue="Nenhum. (0 pontos)" />
+        
+
+    </h:selectOneRadio>
+    <h:panelGroup><br /></h:panelGroup>
+
+    <h:outputLabel value="4 - Quantos cigarros você fuma por dia?" />
+    <h:selectOneRadio value="#{novoProntuarioView.estiloDeVida.cigarro4}"
+                      label="Quantos cigarros você fuma por dia?">
+
+        <f:selectItem itemLabel="Menos de 10." 
+                      itemValue="Menos de 10. (0 pontos)" />
+
+        <f:selectItem itemLabel="De 11 a 20." 
+                      itemValue="De 11 a 20. (1 pontos)" />
+
+        <f:selectItem itemLabel="De 21 a 30." 
+                      itemValue="De 21 a 30. (2 ponto)" />
+
+        <f:selectItem itemLabel="Mais de 31." 
+                      itemValue="Mais de 31. (3 ponto)" />
+
+    </h:selectOneRadio>
+    <h:panelGroup><br /></h:panelGroup>
+
+    <h:outputLabel value="5 - Você fuma frequentemente pela manhã?" />
+    <h:selectOneRadio value="#{novoProntuarioView.estiloDeVida.cigarro5}"
+                      label="Você fuma frequentemente pela manhã?">
+
+        <f:selectItem itemLabel="Sim." 
+                      itemValue="Sim. (1 pontos)" />
+
+        <f:selectItem itemLabel="Não." 
+                      itemValue="Não. (0 pontos)" />
+        
+
+    </h:selectOneRadio>
+    <h:panelGroup><br /></h:panelGroup>
+
+    <h:outputLabel value="6 - Você fuma mesmo doente?" />
+    <h:selectOneRadio value="#{novoProntuarioView.estiloDeVida.cigarro6}"
+                      label="Você fuma mesmo doente?">
+
+        <f:selectItem itemLabel="Sim." 
+                      itemValue="Sim. (1 pontos)" />
+
+        <f:selectItem itemLabel="Não." 
+                      itemValue="Não. (0 pontos)" />
+
+    </h:selectOneRadio>
+    <h:panelGroup><br /></h:panelGroup>
+
+</ui:composition>

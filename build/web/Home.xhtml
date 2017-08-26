@@ -1,0 +1,190 @@
+<ui:composition template="/WEB-INF/template/LayoutPadrao.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:define name="conteudo">
+        <div align="center">
+            <h1 class="texto-pc">Primeira Consulta</h1>
+            <h:graphicImage value="/imagens/logo.png"/>
+
+            <h:panelGrid columns="2" styleClass="border-branco" style="padding: 10px"
+                         columnClasses="label, campo" id="panel">
+
+                <h:outputLabel value="CRM/RA: "/>
+                <h:outputLabel value="#{sessaoUsuarioView.usuario.ra}"/>
+
+                <h:outputLabel value="Nome: "/>
+                <h:outputLabel value="#{sessaoUsuarioView.usuario.nome}"/>
+
+                <h:outputLabel value="Status: "/>
+                <h:outputLabel value="#{sessaoUsuarioView.usuario.statusId}"/>
+
+                <h:outputLabel value="Email: "/>
+                <h:outputLabel value="#{sessaoUsuarioView.usuario.email}"/>
+
+                <h:panelGroup/>
+
+            </h:panelGrid>
+
+            <br /><br />
+
+            <div class="border1">
+
+                <ul class="tab">
+                    <li><a href="javascript:void(0)" id="defaultOpen" class="tablinks" onclick="openCity(event, 'Menu')" >Menu</a></li>
+                    <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Colaboradores')">Colaboradores</a></li>
+                    <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Desenvolvedores')">Desenvolvedores</a></li>
+                </ul>
+
+                <div id="Menu" class="tabcontent">
+
+                    <h2 class="texto-pc">Menu</h2>
+
+                    <div>
+                        <br /><br />
+                        <h:link outcome="CadastroAluno?faces-redirect=true" styleClass="button-aluno">Cadastrar Aluno</h:link>
+                        <br /><br /><br /><br />
+                        <h:link outcome="NovoProntuario?faces-redirect=true" styleClass="button-novo-prontuario">Novo Prontuário</h:link>
+                        <br /><br /><br /><br />
+                        <h:link outcome="Prontuarios?faces-redirect=true" styleClass="button-ver-prontuario">Ver Prontuários</h:link>
+                        <br /><br /><br /><br />
+                        <h:form>
+                            <h:commandLink action="#{segurancaBean.sair}" styleClass="button-sair">#{msg.logout}</h:commandLink>
+                        </h:form>
+                    </div>
+                    <br /><br />
+                    <br/><br />
+                </div>
+
+                <div id="Colaboradores" class="tabcontent">
+
+                    <h2 class="texto-pc">Colaboradores</h2>
+
+                    <div class="card">
+                        <img src="imagens/desenvolvedores/GirlAvatar.png" class="card-img" alt="Avatar" style="width:250px" />
+                        <div class="card-container">
+                            <h4 class="label3"><b>Débora Bellaz Marcuz</b></h4> 
+                            <p></p> 
+                        </div>
+                    </div> <br />
+
+                    <div class="card">
+                        <img src="imagens/desenvolvedores/GirlAvatar.png" class="card-img" alt="Avatar" style="width:250px" />
+                        <div class="card-container">
+                            <h4 class="label3"><b>Josiane Motta e Motta</b></h4> 
+                            <p></p> 
+                        </div>
+                    </div> <br />
+
+                    <div class="card">
+                        <img src="imagens/desenvolvedores/EduBolsonaro.png" class="card-img" alt="Avatar" style="width:250px" />
+                        <div class="card-container">
+                            <h4 class="label3"><b>Rafael Bragança Rodrigues Matias (Eduardo Bolsonaro)</b></h4> 
+                            <p>Edu Bolsonaro</p> 
+                        </div>
+                    </div> <br />
+
+                    <div class="card">
+                        <img src="imagens/desenvolvedores/GirlAvatar.png" class="card-img" alt="Avatar" style="width:250px" />
+                        <div class="card-container">
+                            <h4 class="label3"><b>Silvana Bastos</b></h4> 
+                            <p></p> 
+                        </div>
+                    </div> <br />
+
+                    <br/><br />
+                </div>
+
+                <div id="Desenvolvedores" class="tabcontent">
+
+                    <h2 class="texto-pc">Desenvolvedores</h2>
+
+
+                    <div class="card">
+                        <img src="imagens/desenvolvedores/Gohan.png" class="card-img" alt="Avatar" style="width:250px" />
+                        <div class="card-container">
+                            <h4 class="label3"><b>Cauê Nogueira (Pb Nogueira)</b></h4> 
+                            <p>Desenvolvedor Front-End (HTML, CSS, JavaScript) e Back-End(J2EE / Android)</p> 
+                        </div>
+                    </div>
+
+                    <br />
+
+                    <div class="card">
+                        <img src="imagens/desenvolvedores/RegisTadeu.png" class="card-img" alt="Avatar" style="width:250px" />
+                        <div class="card-container">
+                            <h4 class="label3"><b>Edson Melo (Regis Tadeu)</b></h4> 
+                            <p>Professor Jurado</p> 
+                        </div>
+                    </div>
+
+                    <br />
+
+                    <div class="card">
+                        <img src="imagens/desenvolvedores/BarbaMan.png" class="card-img" alt="Avatar" style="width:250px" />
+                        <div class="card-container">
+                            <h4 class="label3"><b>José Warlly Lima (Barba Man)</b></h4> 
+                            <p>Desenvolvedor C, C++ e C#, ASP.NET</p> 
+                        </div>
+                    </div>
+
+                    <br />
+
+                    <div class="card">
+                        <img src="imagens/desenvolvedores/Espadilha.png" class="card-img" alt="Avatar" style="width:250px" />
+                        <div class="card-container">
+                            <h4 class="label3"><b>Paulo Espadilha (Jack Black)</b></h4> 
+                            <p>Professor de Mockup</p> 
+                        </div>
+                    </div>
+
+                    <br />
+
+                    <div class="card">
+                        <img src="imagens/desenvolvedores/Tayllor.png" class="card-img" alt="Avatar" style="width:250px" />
+                        <div class="card-container">
+                            <h4 class="label3"><b>Tayllor Oliveira (Tayllor Oliveira)</b></h4> 
+                            <p>Desenvolvedor C, C++, C# e Java(Android).</p> 
+                        </div>
+                    </div>
+
+                    <br />
+
+                    <div class="card">
+                        <img src="imagens/desenvolvedores/William.png" class="card-img" alt="Avatar" style="width:250px" />
+                        <div class="card-container">
+                            <h4 class="label3"><b>William Minininha Soares (PH. Ganso)</b></h4> 
+                            <p>Analista de Banco de Dados</p> 
+                        </div>
+                    </div>
+
+                    <br />
+
+                    <div class="card">
+                        <img src="imagens/desenvolvedores/Lineu.png" class="card-img" alt="Avatar" style="width:250px" />
+                        <div class="card-container">
+                            <h4 class="label3"><b>Lineu (Ao som da grande família)</b></h4> 
+                            <p>Participação Especial</p> 
+                        </div>
+                    </div>
+
+                    <br />
+
+
+                    <br/><br />
+                </div>
+
+            </div>
+            <br/><br />
+
+
+
+
+        </div> 
+
+
+    </ui:define>
+
+</ui:composition>

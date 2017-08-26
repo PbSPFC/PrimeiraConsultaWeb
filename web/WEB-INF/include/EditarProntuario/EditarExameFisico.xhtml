@@ -1,0 +1,63 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core">
+
+    <h1 class="texto-pc">Exame Físico</h1>
+
+        <h:panelGrid columns="2" styleClass="border-branco"
+                     columnClasses="label, campo">
+
+            <h:outputLabel value="Pressão Arterial: "/>
+            <h:panelGroup><br /><br /></h:panelGroup>
+
+            <h:outputLabel value="Sistole: "/>
+            <h:inputText size="3" value="#{editarProntuarioView.exameFisico.sistole}" 
+                         label="Sistole" />
+
+            <h:outputLabel value="Diastole: "/>
+            <h:inputText size="3" value="#{editarProntuarioView.exameFisico.diastole}" 
+                         label="Diastole" />
+
+            <h:panelGroup><br /></h:panelGroup>
+            <h:panelGroup><br /></h:panelGroup>
+
+            <h:outputLabel value="Circunferência Cervical: "/>
+            <h:inputText size="3" value="#{editarProntuarioView.exameFisico.cervical}" 
+                         label="Circunferência Cervical" />
+
+            <h:outputLabel value="Circunferência da Cintura "/>
+            <h:inputText size="3" value="#{editarProntuarioView.exameFisico.cintura}" 
+                         label="Circunferência da Cintura" />
+
+            <h:outputLabel value="Razão cintura/quadril: "/>
+            <h:inputText size="3" value="#{editarProntuarioView.exameFisico.quadril}" 
+                         label="Razão cintura/quadril" >
+                <f:convertNumber maxFractionDigits="2" minFractionDigits="2" />
+                <f:validateDoubleRange minimum="0" />
+            </h:inputText>
+
+            <h:panelGroup><br /></h:panelGroup>
+            <h:panelGroup><br /></h:panelGroup>
+            
+            <h:outputLabel value="Snellen: "/>
+            <h:outputLabel />
+
+            <h:outputLabel value="Direita: "/>
+            <h:inputText size="3" value="#{editarProntuarioView.exameFisico.snellenDireita}" 
+                         label="Direita" />
+
+            <h:outputLabel value="Esquerda: "/>
+            <h:inputText size="3" value="#{editarProntuarioView.exameFisico.snellenEsquerda}" 
+                         label="Esquerda" />
+
+        </h:panelGrid>
+
+        <h:panelGrid columns="1" styleClass="border-branco"
+                     columnClasses="label2, campo">
+            <h:outputLabel value="Comentário: "/>
+            <h:inputTextarea value="#{editarProntuarioView.exameFisico.comentario}" cols="80" rows="4"
+                             required="false" label="Comentário" />
+        </h:panelGrid>
+
+</ui:composition>

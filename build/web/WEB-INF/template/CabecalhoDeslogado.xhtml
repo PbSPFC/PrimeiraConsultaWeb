@@ -1,0 +1,26 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core">
+
+    <div>
+        <ul class="ul1">
+            <li><a href="#home" onclick="openNav()">&#9776; Menu</a></li>
+            <li><h:link outcome="Login?faces-redirect=true" styleClass="texto-pc-normal">Primeira Consulta</h:link></li>
+            <div style="float: right;">
+
+                <li><h:link outcome="Login?faces-redirect=true" class="headlogin">Conectar-se</h:link></li>
+                <li>
+                    <h:link outcome="Colaboradores?faces-redirect=true">Colaboradores</h:link>
+                </li>
+                <li><h:link outcome="Desenvolvedores?faces-redirect=true" >Desenvolvedores</h:link></li>
+            </div>
+
+        </ul>
+    </div>
+
+
+
+
+
+</ui:composition>

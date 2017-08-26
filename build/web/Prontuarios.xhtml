@@ -1,0 +1,77 @@
+<ui:composition template="/WEB-INF/template/LayoutPadrao.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:define name="titulo">Prontuários</ui:define>
+
+    <ui:define name="conteudo">
+        <h:outputStylesheet library="css" name="sistema.css"/>
+
+        <h1 class="texto-pc">Prontuários</h1>
+        <div align="center">
+            <h:form id="frm">
+
+                <h:messages showDetail="false" showSummary="true" 
+                            styleClass="form-messages" errorClass="error"
+                            infoClass="info" />
+
+                <div class="border-branco-lista" align="center">
+
+                    <ui:repeat var="prontuario" value="#{prontuariosView.listaProntuario}">
+
+                        <div align="center" class="border3">
+
+                            <h:outputLabel value="Número do Prontuário: " style="font-size: 24px; font-weight: bold;" styleClass="label"/>
+                            <h:outputText value="#{prontuario.numProntuario}" style="font-size: 24px;" styleClass="label"/>
+                            <br /><br /><br />
+
+                            <div class="tooltip">
+                                <h:commandLink action="#{prontuariosView.verProntuario()}" value="Ver" styleClass="button-ver-prontuario">
+                                    <f:setPropertyActionListener target="#{prontuariosView.prontuarioSelecionado}" 
+                                                                 value="#{prontuario}"/>
+                                </h:commandLink>
+                                <span class="tooltiptext">Idade: #{prontuario.idade}<br />
+                                    Sexo: #{prontuario.sexo}<br />
+                                    Data de criação: #{prontuario.data}</span>
+                            </div>
+
+                            <div class="tooltip">
+                                <h:commandLink action="#{prontuariosView.editarProntuario()}" value="Editar" styleClass="button-editar">
+                                    <f:setPropertyActionListener target="#{prontuariosView.prontuarioSelecionado}" 
+                                                                 value="#{prontuario}"/>
+                                </h:commandLink>
+                                <span class="tooltiptext">Ultima edição: #{prontuario.data}</span>
+                            </div>
+
+                            <div class="tooltip">
+                                <h:commandLink action="#{prontuariosView.verHistorico()}" value="Histórico" styleClass="button-historico">
+                                    <f:setPropertyActionListener target="#{prontuariosView.prontuarioSelecionado}" 
+                                                                 value="#{prontuario}"/>
+                                </h:commandLink>
+                                <span class="tooltiptext">Número de logs: #{prontuariosView.getNumLogs(prontuario)}</span>
+                            </div>
+
+                            <div class="tooltip">
+                                <h:commandLink onclick="if (!confirm('Deseja excluir este prontuário?'))
+                                        return false" action="#{prontuariosView.excluir()}" value="Excluir" styleClass="button-excluir">
+                                    <f:setPropertyActionListener target="#{prontuariosView.prontuarioSelecionado}" 
+                                                                 value="#{prontuario}"/>
+                                </h:commandLink>
+                                <span class="tooltiptext">Deseja excluír o prontuário N° #{prontuario.numProntuario}?</span>
+                            </div>
+
+                            <br /><br /><br />
+
+                        </div>
+
+
+                    </ui:repeat>
+                </div>
+
+            </h:form>
+        </div>
+    </ui:define>
+
+</ui:composition>

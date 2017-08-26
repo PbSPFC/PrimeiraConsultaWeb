@@ -1,0 +1,131 @@
+<ui:composition template="/WEB-INF/template/LayoutPadrao.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:define name="titulo">Novo Prontuário</ui:define>
+
+    <ui:define name="conteudo">
+
+        <div align="center">
+
+            <h1 class="texto-pc">Novo Prontuário</h1>
+
+            <h:form id="frm">
+
+                <h:messages showDetail="false" showSummary="true" 
+                            styleClass="form-messages" errorClass="error"
+                            infoClass="info" />
+
+                <h:panelGrid columns="2" styleClass="border-branco"
+                             columnClasses="label, campo" id="panel">
+
+                    <h:outputLabel value="Número do Prontuário: "/>
+                    <h:inputText size="10" value="#{novoProntuarioView.prontuario.numProntuario}" 
+                                 required="true" label="N° do Prontuário" />
+
+                    <h:outputLabel value="Sexo: "/>
+                    <h:selectOneRadio value="#{novoProntuarioView.prontuario.sexo}"
+                                      required="true" label="Sexo">
+                        <f:selectItem itemLabel="Masculino" itemValue="Masculino" />
+                        <f:selectItem itemLabel="Feminino" itemValue="Feminino" />
+                    </h:selectOneRadio>
+
+                    <h:outputLabel value="Idade: "/>
+                    <h:inputText size="3" value="#{novoProntuarioView.prontuario.idade}" 
+                                 required="true" label="Idade" />
+
+                    <h:outputLabel value="Peso: "/>
+                    <h:inputText size="3" value="#{novoProntuarioView.prontuario.peso}" 
+                                 required="true" label="Peso" />
+
+                    <h:outputLabel value="Altura: "/>
+                    <h:inputText size="3" value="#{novoProntuarioView.prontuario.altura}" 
+                                 required="true" label="Altura" >
+                        <f:convertNumber maxFractionDigits="2" minFractionDigits="2" />
+                        <f:validateDoubleRange minimum="0" />
+                    </h:inputText>
+
+
+                </h:panelGrid>
+
+                <div class="border1">
+
+                    <ul class="tab">
+                        <li><a href="javascript:void(0)" id="defaultOpen" class="tablinks" onclick="openCity(event, 'Anamnese')" >Anamnese</a></li>
+                        <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'EstiloDeVida')">Estilo de Vida</a></li>
+                        <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'ExameFisico')">Exame Físico</a></li>
+                    </ul>
+
+                    <div id="Anamnese" class="tabcontent">
+                    <ui:include src="/WEB-INF/include/NovoProntuario/NovoAnamnese.xhtml"/>
+                    <br/><br />
+                    </div>
+                    
+                    <div id="EstiloDeVida" class="tabcontent">
+                    <ui:include src="/WEB-INF/include/NovoProntuario/NovoEstiloDeVida.xhtml"/>
+                    <br/><br />
+                    </div>
+                    
+                    <div id="ExameFisico" class="tabcontent">
+                    <ui:include src="/WEB-INF/include/NovoProntuario/NovoExameFisico.xhtml"/>
+                    <br/><br />
+                    </div>
+                    
+                </div>
+                <br/><br />
+
+                <div class="border1">
+
+                    <h1 class="texto-pc">Lista de Problemas</h1>
+
+                    <h:commandButton value="Adicionar" action="#{novoProntuarioView.addListaProblemas}" 
+                                     immediate="true" styleClass="button" >
+                        <f:ajax render="lista" />
+                    </h:commandButton>
+                    <h:commandButton value="Remover" action="#{novoProntuarioView.removeListaProblemas}" 
+                                     immediate="true" styleClass="button" >
+                        <f:ajax render="lista" />
+                    </h:commandButton>
+
+                    <h:panelGrid columns="1" styleClass="border-branco"
+                                 columnClasses="label2, campo" id="lista">
+                        <ui:repeat var="listaProblemas" value="#{novoProntuarioView.listaProblemas}" >
+
+
+                            <h:outputLabel value="Descrição: "/>
+                            <h:panelGroup><br /></h:panelGroup>
+                            <h:inputText size="30" value="#{listaProblemas.descricao}" 
+                                         required="false" label="Descrição" />
+
+                            <h:panelGroup><br /></h:panelGroup>
+                            <h:outputLabel value="Ação: "/>
+                            <h:panelGroup><br /></h:panelGroup>
+                            <h:inputTextarea value="#{listaProblemas.acao}" cols="80" rows="4"
+                                             required="false" label="Ação" />
+                            <h:panelGroup><br /><br /></h:panelGroup>
+
+
+                        </ui:repeat>
+                    </h:panelGrid>
+                    <br/><br />
+                </div>
+                <br/><br />
+
+                <h:panelGrid columns="1" styleClass="border-branco"
+                             columnClasses="label2, campo">
+                    <h:outputLabel value="Comentário Final: "/>
+                    <h:inputTextarea value="#{novoProntuarioView.prontuario.comentario}" cols="80" rows="4"
+                                     required="false" label="Comentário Final" />
+                </h:panelGrid>
+
+                <h:commandButton value="Cadastrar" action="#{novoProntuarioView.salvar}" styleClass="button-criar" />
+                <h:link outcome="Home?faces-redirect=true" styleClass="button-voltar">Voltar</h:link>
+            </h:form>
+
+        </div>
+
+    </ui:define>
+
+</ui:composition>

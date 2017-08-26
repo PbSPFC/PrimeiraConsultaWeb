@@ -1,0 +1,29 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core">
+
+    <h1 class="texto-pc">Anamnese</h1>
+
+    <h:panelGrid columns="1" styleClass="border-branco"
+                 columnClasses="label2, campo">
+        
+        <h:outputLabel value="Queixa e Duração: "/>
+        <h:inputTextarea value="#{verLogProntuarioView.anamnese.queixa}" cols="80" rows="4"
+                         required="false" label="Queixa e Duração" readonly="true" />
+        
+        <h:outputLabel value="História da Doença atual: "/>
+        <h:inputTextarea value="#{verLogProntuarioView.anamnese.historiaDoenca}" cols="80" rows="4"
+                         required="false" label="História da Doença atual" readonly="true" />
+        
+        <h:outputLabel value="Interrogatório sobre diverLogsos aparelhos e sistemas: "/>
+        <h:inputTextarea value="#{verLogProntuarioView.anamnese.interrogatorio}" cols="80" rows="4"
+                         required="false" label="Interrogatório sobre diverLogsos aparelhos e sistemas" readonly="true" />
+        
+        <h:outputLabel value="Percepção do paciente sobre a doença: "/>
+        <h:inputTextarea value="#{verLogProntuarioView.anamnese.percepcao}" cols="80" rows="4"
+                         required="false" label="Percepção do paciente sobre a doença" readonly="true" />
+        
+    </h:panelGrid>
+
+</ui:composition>

@@ -1,0 +1,44 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core">
+
+    <div>
+        <ul class="ul1">
+            <li><a href="#home" onclick="openNav()">&#9776; Menu</a></li>
+            <li><h:link outcome="Home?faces-redirect=true" styleClass="texto-pc-normal">Primeira Consulta</h:link></li>
+            <div style="float: right;">
+
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Nome: #{sessaoUsuarioView.usuario.nome}</a>
+                    <div class="dropdown-content">
+                        <a href="#">CRM/RA: #{sessaoUsuarioView.usuario.ra}</a><br />
+                        <a href="#">Status: #{sessaoUsuarioView.usuario.statusId}</a><br />
+                        <a href="#">E-mail: #{sessaoUsuarioView.usuario.email}</a>
+                    </div>
+                </li>
+
+
+                <li><h:link outcome="Home?faces-redirect=true" >#{msg.home}</h:link></li>
+                <li>
+                    <div class="tooltip-right">
+                        <h:link outcome="Prontuarios?faces-redirect=true">Lista de Prontuários</h:link>
+                        <span class="tooltiptext">Quantidade de Prontuários: #{sessaoUsuarioView.numeroDeProntuarios}</span>
+                    </div>
+                </li>
+                <li><h:link outcome="NovoProntuario?faces-redirect=true" >Novo Prontuário</h:link></li>
+                <li>
+                    <h:form>
+                        <h:commandLink action="#{segurancaBean.sair}" styleClass="headsair">#{msg.logout}</h:commandLink>
+                    </h:form>
+                </li>
+            </div>
+
+        </ul>
+    </div>
+
+
+
+
+
+</ui:composition>

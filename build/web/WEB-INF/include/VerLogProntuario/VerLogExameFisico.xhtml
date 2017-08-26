@@ -1,0 +1,80 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core">
+
+    <h1 class="texto-pc">Exame Físico</h1>
+
+        <h:panelGrid columns="2" styleClass="border-branco"
+                     columnClasses="label, campo">
+
+            <h:outputLabel value="Pressão Arterial: "/>
+            <h:panelGroup><br /><br /></h:panelGroup>
+
+            <h:outputLabel value="Sistole: "/>
+            <h:outputLabel value="#{verLogProntuarioView.exameFisico.sistole}" />
+
+            <h:outputLabel value="Diastole: "/>
+            <h:outputLabel value="#{verLogProntuarioView.exameFisico.diastole}" />
+
+            <h:outputLabel value="Resultado: "/>
+            <h:outputLabel value="#{verLogProntuarioView.exameFisico.paResultado}" />
+            
+            <h:panelGroup><br /></h:panelGroup>
+            <h:panelGroup><br /></h:panelGroup>
+
+            <h:outputLabel value="IMC: "/>
+            <h:outputLabel value="#{verLogProntuarioView.exameFisico.imc}" />
+            
+            <h:outputLabel value="Resultado do IMC: "/>
+            <h:outputLabel value="#{verLogProntuarioView.exameFisico.imcResultado}" />
+            
+            <h:panelGroup><br /></h:panelGroup>
+            <h:panelGroup><br /></h:panelGroup>
+            
+            <h:outputLabel value="Circunferência Cervical: "/>
+            <h:outputLabel value="#{verLogProntuarioView.exameFisico.cervical}" />
+            
+            <h:outputLabel value="Resultado: "/>
+            <h:outputLabel value="#{verLogProntuarioView.exameFisico.cervicalResultado}" />
+            <h:panelGroup><br /></h:panelGroup>
+            <h:panelGroup />
+            
+            <h:outputLabel value="Circunferência da Cintura: "/>
+            <h:outputLabel value="#{verLogProntuarioView.exameFisico.cintura}" />
+            
+            <h:outputLabel value="Resultado: "/>
+            <h:outputLabel value="#{verLogProntuarioView.exameFisico.cinturaResultado}" />
+            <h:panelGroup><br /></h:panelGroup>
+            <h:panelGroup />
+
+            <h:outputLabel value="Razão cintura/quadril: "/>
+            <h:outputLabel value="#{verLogProntuarioView.exameFisico.quadril}" />
+            <h:outputLabel value="Razão cintura/quadril: "/>
+            <h:outputLabel value="#{verLogProntuarioView.exameFisico.quadrilResultado}" />
+
+            <h:panelGroup><br /></h:panelGroup>
+            <h:panelGroup><br /></h:panelGroup>
+            
+            <h:outputLabel value="Snellen: "/>
+            <h:outputLabel />
+
+            <h:outputLabel value="Direita: "/>
+            <h:outputLabel value="#{verLogProntuarioView.exameFisico.snellenDireita}" />
+
+            <h:outputLabel value="Esquerda: "/>
+            <h:outputLabel value="#{verLogProntuarioView.exameFisico.snellenEsquerda}" />
+
+            <h:outputLabel value="Resultado: "/>
+            <h:outputLabel value="#{verLogProntuarioView.exameFisico.snellenResultado}" />
+            
+        </h:panelGrid>
+
+        <h:panelGrid columns="1" styleClass="border-branco"
+                     columnClasses="label2, campo">
+            <h:outputLabel value="Comentário: "/>
+            <h:inputTextarea value="#{verLogProntuarioView.exameFisico.comentario}" cols="80" rows="4"
+                             required="false" label="Comentário" readonly="true"/>
+        </h:panelGrid>
+
+</ui:composition>

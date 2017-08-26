@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Acesso Negado</title>
+
+        
+        <h:outputStylesheet library="css" name="sistema.css"/>
+    </h:head>
+    <h:body>
+        <div id="content" align="center">
+
+            <h1 class="texto-pc">Acesso negado</h1>
+            <h:graphicImage value="/imagens/Cancel.png"/>
+            <br/><br/>
+            Esta página é protegida e você não possui privilégios para acessá-la.
+            <br/><br/>
+            <input type="button" value="#{msg.back}" class="button" onclick="history.back()"/>
+        </div>
+    </h:body>
+</html>

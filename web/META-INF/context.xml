@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/PrimeiraConsulta">
+    <Realm className="org.apache.catalina.realm.JDBCRealm" 
+           connectionName="root" connectionPassword="pb" 
+           connectionURL="jdbc:mysql://localhost/medicina" 
+           driverName="com.mysql.jdbc.Driver" 
+           userTable="usuario" userNameCol="ra"
+           userCredCol="senha" userRoleTable="usuario"
+           roleNameCol="status_id"/>
+    <Manager pathname="" />
+</Context>

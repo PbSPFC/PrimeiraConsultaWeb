@@ -1,0 +1,116 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core">
+
+    <h1 class="texto-pc">Estilo de Vida / Hábitos</h1>
+    <h1 class="texto-pc">Dieta</h1>
+
+    <h:panelGrid columns="1" styleClass="border-branco"
+                 rowClasses="label2, campo, campo">
+
+        <h:outputLabel value="Gordura / Colesterol: "/>
+        <h:selectOneRadio value="#{novoProntuarioView.estiloDeVida.gordura}"
+                          label="Gordura" layout="pageDirection">
+            <f:selectItem itemLabel="7 Vezes na semana ou mais: Grango con pele, carne com gordura, miúdos, frituras." 
+                          itemValue="7 vezes na semana ou mais: frango com pele, carne com gordura, miúdos, frituras (alta ingesta)." />
+            <f:selectItem itemLabel="Abaixo de 7 vezes." 
+                          itemValue="Abaixo de 7 vezes na semana (Ingesta adequada)." />
+        </h:selectOneRadio>
+        <h:panelGroup><br /></h:panelGroup>
+
+        <h:outputLabel value="Fibra: "/>
+        <h:selectOneRadio value="#{novoProntuarioView.estiloDeVida.fibra}"
+                          label="Fibra" layout="pageDirection">
+            <f:selectItem itemLabel="Menos de 5 porções de frutas e verduras e hortaliças por dia." 
+                          itemValue="Menos de 5 porções de frutas e verduras e hortaliças por dia. (Inadequado)" />
+            <f:selectItem itemLabel="Recomendação da ingestão diária de 400 gramas de frutas e hortaliças (WHO, 2003), o que seria equivalente, aproximadamente, ao consumo diário de cinco porções desses alimentos." 
+                          itemValue="Recomendação da ingestão diária de 400 gramas de frutas e hortaliças (WHO, 2003), o que seria equivalente, aproximadamente, ao consumo diário de cinco porções desses alimentos. (Adequado)" />
+        </h:selectOneRadio>
+        <h:panelGroup><br /></h:panelGroup>
+
+        <h:outputLabel value="Cálcio: "/>
+        <h:selectOneRadio value="#{novoProntuarioView.estiloDeVida.calcio}"
+                          label="Cálcio" layout="pageDirection">
+            <f:selectItem itemLabel="Menos de 3 porções de laticínios por semana." 
+                          itemValue="Menos de 3 porções de laticínios por semana (Inadequado)." />
+            <f:selectItem itemLabel="3 porções de laticínios ou mais por semana." 
+                          itemValue="3 porções de laticínios ou mais por semana (Adequado)." />
+        </h:selectOneRadio>
+        <h:panelGroup><br /></h:panelGroup>
+
+        <h:outputLabel value="Sódio: "/>
+        <h:selectOneRadio value="#{novoProntuarioView.estiloDeVida.sodio}"
+                          label="Sódio" layout="pageDirection">
+            <f:selectItem itemLabel="Uso de tempero pronto, embutidos, industrializados ou enlatados diário) ou mais de 5g de sal por dia." 
+                          itemValue="Uso de tempero pronto, embutidos, industrializados ou enlatados diário) ou mais de 5g de sal por dia. (alta ingesta)" />
+
+            <f:selectItem itemLabel="Menos que 5 e mais que 2g de sal por dia." 
+                          itemValue="Menos que 5 e mais que 2g de sal por dia. (moderada Ingesta)" />
+
+            <f:selectItem itemLabel="Abaixo de 2g de sal por dia." 
+                          itemValue="Abaixo de 2g de sal por dia. (baixa ingesta)" />
+        </h:selectOneRadio>
+        <h:panelGroup><br /></h:panelGroup>
+
+        <h:outputLabel value="Acúcares / Doces: "/>
+        <h:selectOneRadio value="#{novoProntuarioView.estiloDeVida.acucar}"
+                          label="Doces" layout="pageDirection">
+            <f:selectItem itemLabel="Maior de 75g 5x por semana." 
+                          itemValue="Maior de 75g 5x por semana. (Inadequado)" />
+            <f:selectItem itemLabel="Menor de 75g 5x por semana." 
+                          itemValue="Menor de 75g 5x por semana. (Adequado)" />
+        </h:selectOneRadio>
+        <h:panelGroup><br /></h:panelGroup>
+
+        <h:outputLabel value="Refrigerantes / Sucos Artificiais: "/>
+        <h:selectOneRadio value="#{novoProntuarioView.estiloDeVida.refri}"
+                          label="Refrigerantes" layout="pageDirection">
+            <f:selectItem itemLabel="Mais de 5 vezes por semana." 
+                          itemValue="Mais de 5 vezes por semana. (Consumo regular)" />
+            <f:selectItem itemLabel="Menos de 1 vez por semana." 
+                          itemValue="Menos de 1 vez por semana (Consumo normal)" />
+        </h:selectOneRadio>
+        <h:panelGroup><br /></h:panelGroup>
+
+        <h:outputLabel value="Ingestão de Água"/>
+        <h:selectOneRadio value="#{novoProntuarioView.estiloDeVida.agua}"
+                          label="Água" layout="pageDirection">
+            <f:selectItem itemLabel="De dois ou mais litros de agua por dia." 
+                          itemValue="De dois ou mais litros de agua por dia. (Adequada)" />
+            <f:selectItem itemLabel="Menos de dois litro por dia." 
+                          itemValue="Menos de dois litro por dia. (Inadequada)" />
+        </h:selectOneRadio>
+        <h:panelGroup><br /></h:panelGroup>
+
+        <h:outputLabel value="Atividade Física: "/>
+        <h:selectOneRadio value="#{novoProntuarioView.estiloDeVida.atFisica}"
+                          label="Atividade Física" layout="pageDirection">
+            <f:selectItem itemLabel="Menos de 10 minutos contínuos de exercício por semana" 
+                          itemValue="Menos de 10 minutos contínuos de exercício por semana (Sedentário)" />
+
+            <f:selectItem itemLabel="Menos de 150 minutos de exercicíos por semana. (Irregularmente ativo)" 
+                          itemValue="Menos de 150 minutos de exercicíos por semana. (Irregularmente ativo)" />
+
+            <f:selectItem itemLabel="Mais de 150 minutos exercicíos por semana." 
+                          itemValue="Mais de 150 minutos exercicíos por semana. (Ativo)" />
+        </h:selectOneRadio>
+        <h:panelGroup><br /></h:panelGroup>
+
+        <h:outputLabel value="Paciente é Sexualmente Ativo?"/>
+        <h:selectOneRadio value="#{novoProntuarioView.estiloDeVida.sexualmenteAtivo}"
+                          label="Sexualmente Ativo" layout="pageDirection">
+            <f:selectItem itemLabel="Sim." 
+                          itemValue="Sim" />
+            <f:selectItem itemLabel="Não." 
+                          itemValue="Não" />
+        </h:selectOneRadio>
+        <h:panelGroup><br /></h:panelGroup>
+
+        <ui:include src="/WEB-INF/include/NovoProntuario/NovoEstiloDeVida_Sono.xhtml"/>
+        <ui:include src="/WEB-INF/include/NovoProntuario/NovoEstiloDeVida_Tabagismo.xhtml"/>
+        <ui:include src="/WEB-INF/include/NovoProntuario/NovoEstiloDeVida_Alcool.xhtml"/>
+        
+    </h:panelGrid>
+
+</ui:composition>

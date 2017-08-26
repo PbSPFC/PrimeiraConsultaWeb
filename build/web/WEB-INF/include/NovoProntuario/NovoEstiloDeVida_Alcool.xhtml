@@ -1,0 +1,79 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core">
+
+    <h2 style="text-align: center; font-size: 32px;">Consumo de Álcool</h2>
+    <h:panelGroup><br /></h:panelGroup>
+    <h:panelGroup />
+
+    <h:outputLabel value="Você consome álcool?" />
+    <h:selectOneRadio value="#{novoProntuarioView.estiloDeVida.alcoolAtivoOpt}"
+                      label="Você consome álcool?" >
+
+        <f:selectItem itemLabel="Sim" 
+                      itemValue="1" />
+
+        <f:selectItem itemLabel="Não" 
+                      itemValue="0" />
+
+    </h:selectOneRadio>
+    <h:panelGroup><br /></h:panelGroup>
+
+    <h2 style="text-align: center; font-size: 32px;">Avaliaçao do grau de dependência de álcool (Caso 'Sim'): </h2>
+    <h:panelGroup><br /></h:panelGroup>
+    <h:panelGroup />
+
+    <h:outputLabel value="Alguma vez você sentiu que deveria diminuir a quantidade de bebida, ou parar de beber?" />
+    <h:selectOneRadio value="#{novoProntuarioView.estiloDeVida.alcool1}"
+                      label="Alguma vez você sentiu que deveria diminuir a quantidade de bebida, ou parar de beber?">
+
+        <f:selectItem itemLabel="Sim." 
+                      itemValue="Sim." />
+
+        <f:selectItem itemLabel="Não." 
+                      itemValue="Não." />
+
+    </h:selectOneRadio>
+    <h:panelGroup><br /></h:panelGroup>
+
+    <h:outputLabel value="As pessoas a/o aborrecem porque criticam o seu modo de beber?" />
+    <h:selectOneRadio value="#{novoProntuarioView.estiloDeVida.alcool2}"
+                      label="As pessoas a/o aborrecem porque criticam o seu modo de beber?">
+
+        <f:selectItem itemLabel="Sim." 
+                      itemValue="Sim." />
+
+        <f:selectItem itemLabel="Não." 
+                      itemValue="Não." />
+
+    </h:selectOneRadio>
+    <h:panelGroup><br /></h:panelGroup>
+
+    <h:outputLabel value="Você se sente culpado ou chateado pela maneira que costuma beber?" />
+    <h:selectOneRadio value="#{novoProntuarioView.estiloDeVida.alcool3}"
+                      label="Você se sente culpado ou chateado pela maneira que costuma beber?">
+
+        <f:selectItem itemLabel="Sim." 
+                      itemValue="Sim." />
+
+        <f:selectItem itemLabel="Não." 
+                      itemValue="Não." />
+
+    </h:selectOneRadio>
+    <h:panelGroup><br /></h:panelGroup>
+
+    <h:outputLabel value="Alguma vez você já, como primeira ação pela manhã, bebeu para acalmar os nervos ou para se livrar de uma ressaca?" />
+    <h:selectOneRadio value="#{novoProntuarioView.estiloDeVida.alcool4}"
+                      label="Alguma vez você já, como primeira ação pela manhã, bebeu para acalmar os nervos ou para se livrar de uma ressaca?">
+
+        <f:selectItem itemLabel="Sim." 
+                      itemValue="Sim." />
+
+        <f:selectItem itemLabel="Não." 
+                      itemValue="Não." />
+
+    </h:selectOneRadio>
+    <h:panelGroup><br /></h:panelGroup>
+
+</ui:composition>

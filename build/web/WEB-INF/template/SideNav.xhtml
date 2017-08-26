@@ -1,0 +1,16 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core">
+
+        <h:link outcome="Home?faces-redirect=true">Home<div></div></h:link>
+        <h:link outcome="Prontuarios?faces-redirect=true">Lista de Prontuários<div></div></h:link>
+        <h:link outcome="NovoProntuario?faces-redirect=true">Novo Prontuário<div></div></h:link>
+        <h:link outcome="Colaboradores?faces-redirect=true">Colaboradores<div></div></h:link>
+        <h:link outcome="Desenvolvedores?faces-redirect=true">Desenvolvedores<div></div></h:link>
+        <h:form>
+            <h:commandLink action="#{segurancaBean.sair}" styleClass="sidesair">#{msg.logout}</h:commandLink>
+        </h:form>
+
+
+</ui:composition>

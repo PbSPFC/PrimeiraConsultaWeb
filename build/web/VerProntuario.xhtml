@@ -1,0 +1,139 @@
+<ui:composition template="/WEB-INF/template/LayoutPadrao.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:define name="conteudo">
+        <div align="center">
+            <h1 class="texto-pc">Ver Prontuário</h1>
+
+            <h:form id="frm">
+
+                <h:panelGrid columns="2" styleClass="border-branco" style="padding: 10px"
+                             columnClasses="label, campo" id="panel">
+
+                    <h:outputLabel value="Cadastrado por: "/>
+                    <h:outputLabel value="#{verProntuarioView.prontuario.nomeMedico}"/>
+
+                    <h:outputLabel value="CRM/RA: "/>
+                    <h:outputLabel value="#{verProntuarioView.prontuario.raUsuario}"/>
+
+                    <h:outputLabel value="Número do Prontuário: "/>
+                    <h:outputLabel value="#{verProntuarioView.prontuario.numProntuario}"/>
+
+                    <h:outputLabel value="Data de Criação: "/>
+                    <h:outputLabel value="#{verProntuarioView.prontuario.data}"/>
+
+                    <h:outputLabel value="Ultima Edição: "/>
+                    <h:outputLabel value="#{verProntuarioView.prontuario.dataEdicao}"/>
+
+                    <h:outputLabel value="Sexo: "/>
+                    <h:outputLabel value="#{verProntuarioView.prontuario.sexo} "/>
+
+                    <h:outputLabel value="Idade: "/>
+                    <h:outputLabel value="#{verProntuarioView.prontuario.idade} "/>
+
+                    <h:outputLabel value="Peso: "/>
+                    <h:outputLabel value="#{verProntuarioView.prontuario.peso} "/>
+
+                    <h:outputLabel value="Altuta: "/>
+                    <h:inputText size="3" value="#{verProntuarioView.prontuario.altura}" 
+                                 label="Altura" readonly="true" >
+                        <f:convertNumber maxFractionDigits="2" minFractionDigits="2" />
+                        <f:validateDoubleRange minimum="0" />
+                    </h:inputText>
+
+                </h:panelGrid>
+                <br />
+                <div class="border1">
+
+                    <ul class="tab">
+                        <li><a href="javascript:void(0)" id="defaultOpen" class="tablinks" onclick="openCity(event, 'Anamnese')" >Anamnese</a></li>
+                        <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'EstiloDeVida')">Estilo de Vida</a></li>
+                        <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'ExameFisico')">Exame Físico</a></li>
+                    </ul>
+
+                    <div id="Anamnese" class="tabcontent">
+                        <ui:include src="/WEB-INF/include/VerProntuario/VerAnamnese.xhtml"/>
+                        <br/><br />
+                    </div>
+
+                    <div id="EstiloDeVida" class="tabcontent">
+                        <ui:include src="/WEB-INF/include/VerProntuario/VerEstiloDeVida.xhtml"/>
+                        <br/><br />
+                    </div>
+
+                    <div id="ExameFisico" class="tabcontent">
+                        <ui:include src="/WEB-INF/include/VerProntuario/VerExameFisico.xhtml"/>
+                        <br/><br />
+                    </div>
+                </div>
+                <br/><br />
+
+                <div class="border1">
+
+                    <h1 class="texto-pc">Rastreamento</h1>
+
+                    <div class="border-branco">
+                        <ui:repeat var="listaRastreamento" value="#{verProntuarioView.listaRastreamento}">
+
+                            <button class="accordion" type="button">Nível: #{listaRastreamento.nivel} - #{listaRastreamento.rastreamento}</button>
+                            <div class="panel">
+                                <h2>#{listaRastreamento.titulo}</h2>
+
+                                <p>#{listaRastreamento.texto}</p>
+
+                            </div>
+
+                        </ui:repeat>
+
+                        <button class="accordion" type="button">Referências</button>
+                        <div class="panel">
+                            <p>#{verProntuarioView.referencias}</p>
+                        </div>
+                    </div>
+                    <br/><br />
+                </div>
+                <br/><br />
+
+
+                <div class="border1">
+
+                    <h1 class="texto-pc">Lista de Problemas</h1>
+
+                    <ui:repeat var="listaProblemas" value="#{verProntuarioView.listaProblemas}">
+                        <h:panelGrid columns="1" styleClass="border-branco"
+                                     columnClasses="label2, campo">
+
+                            <h:outputLabel value="Descrição: "/>
+                            <h:outputLabel value="#{listaProblemas.descricao}" />
+
+                            <h:outputLabel value="Ação: "/>
+                            <h:inputTextarea value="#{listaProblemas.acao}" cols="80" rows="4"
+                                             required="false" label="Ação" readonly="true"/>
+
+                        </h:panelGrid>
+                    </ui:repeat>
+                    <br/><br />
+                </div>
+                <br/><br />
+
+                <h:panelGrid columns="1" styleClass="border-branco"
+                             columnClasses="label2, campo">
+
+                    <h:outputLabel value="Comentário Final: "/>
+                    <h:inputTextarea value="#{verProntuarioView.prontuario.comentario}" cols="80" rows="4"
+                                     required="false" label="Comentário Final" readonly="true"/>
+
+                </h:panelGrid>
+                <br /><br />
+                <h:link outcome="Prontuarios?faces-redirect=true" styleClass="button-voltar">Voltar</h:link>
+                <br /><br />
+            </h:form>
+        </div> 
+
+
+    </ui:define>
+
+</ui:composition>
